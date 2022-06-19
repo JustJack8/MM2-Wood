@@ -71,7 +71,7 @@ using StringTools;
 
 class PlayState extends MusicBeatState
 {
-	public static var STRUM_X = -10;
+	public static var STRUM_X = -20;
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
 	public static var ratingStuff:Array<Dynamic> = [
@@ -997,7 +997,7 @@ class PlayState extends MusicBeatState
 		strumLine.scrollFactor.set();
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
-		timeTxt = new FlxText(246, 627, "", 32);
+		timeTxt = new FlxText(306, 637, "", 32);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
 		timeTxt.alpha = 0;
@@ -1012,10 +1012,11 @@ class PlayState extends MusicBeatState
 		updateTime = showTime;
 
 		timeBarBG = new AttachedSprite('timeBar');
-		timeBarBG.x = timeTxt.x;
+		timeBarBG.x = 190;
 		timeBarBG.y = timeTxt.y + (timeTxt.height / 4);
 		timeBarBG.scrollFactor.set();
 		timeBarBG.alpha = 0;
+		timeBarBG.scale.set(1.7, 1);
 		timeBarBG.visible = showTime;
 		timeBarBG.color = FlxColor.BLACK;
 		timeBarBG.updateHitbox();
@@ -1024,9 +1025,9 @@ class PlayState extends MusicBeatState
 		add(timeBarBG);
 
 		editable = true;
-		editbleSprite = botplayTxt;
+		editbleSprite = timeBarBG;
 
-		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 8), Std.int(timeBarBG.height - 8), this,
+		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 4), Std.int(timeBarBG.height - 8), this,
 			'songPercent', 0, 1);
 		timeBar.scrollFactor.set();
 		timeBar.createFilledBar(0xFF000000, 0xFFF71305);

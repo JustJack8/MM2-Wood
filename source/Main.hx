@@ -77,9 +77,9 @@ class Main extends Sprite
 		#if !mobile
 		if(!ClientPrefs.downScroll)
 		{
-			fpsVar = new FPS(246, 607, 0xFFFFFF);
+			fpsVar = new FPS(226, 607, 0xFFFFFF);
 		} else {
-			fpsVar = new FPS(246, 55, 0xFFFFFF);
+			fpsVar = new FPS(226, 55, 0xFFFFFF);
 		}
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
