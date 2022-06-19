@@ -258,6 +258,7 @@ class PauseSubState extends MusicBeatSubstate
 					PlayState.instance.botplayTxt.alpha = 1;
 					PlayState.instance.botplaySine = 0;
 				case "Exit to menu":
+					Main.fpsVar.visible = false;
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 

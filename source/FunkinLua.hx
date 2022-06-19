@@ -2534,7 +2534,7 @@ class FunkinLua {
 			#if (linc_luajit >= "0.0.6")
 			if(Lua.isfunction(lua, -1) == true)
 			#else
-			if(Lua.isfunction(lua, -1) == 1)
+			if(Lua.isfunction(lua, -1) == true)
 			#end
 			{
 				for(arg in args) Convert.toLua(lua, arg);
