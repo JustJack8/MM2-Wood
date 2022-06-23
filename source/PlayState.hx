@@ -141,6 +141,8 @@ class PlayState extends MusicBeatState
 	public var unspawnNotes:Array<Note> = [];
 	public var eventNotes:Array<EventNote> = [];
 
+	var healthCounter:FlxText;
+
 	private var strumLine:FlxSprite;
 
 	//Handles the new epic mega sexy cam code that i've done
@@ -176,6 +178,8 @@ class PlayState extends MusicBeatState
 	public var goods:Int = 0;
 	public var bads:Int = 0;
 	public var shits:Int = 0;
+
+	var shitters:BGSprite;
 
 	private var generatedMusic:Bool = false;
 	public var endingSong:Bool = false;
@@ -389,7 +393,7 @@ class PlayState extends MusicBeatState
 		// String that contains the mode defined here so it isn't necessary to call changePresence for each mode
 		if (isStoryMode)
 		{
-			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
+			detailsText = "Story Mode: Week 1";
 		}
 		else
 		{
@@ -800,6 +804,26 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank4', 1300, 900, 1.5, 1.5, ['fg']));
 				foregroundSprites.add(new BGSprite('tank5', 1620, 700, 1.5, 1.5, ['fg']));
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
+
+			case 'fire is dumb':
+				var bg:BGSprite = new BGSprite('Sky', -600, -200, 0.9, 0.9);
+				add(bg);
+
+				shitters = new BGSprite('Dumb_shit', -840, 150, 1, 1, ['chior bob instance 1']);
+				add(shitters);
+
+				var stageFront:BGSprite = new BGSprite('Stage', -650, 500, 0.9, 0.9);
+				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+				stageFront.updateHitbox();
+				add(stageFront);
+
+				var hypercam:BGSprite = new BGSprite('hypercam', -473, -45);
+				hypercam.scale.set(0.3, 0.3);
+				hypercam.cameras = [camHUD];
+				add(hypercam);
+
+				editable = false;
+				editbleSprite = hypercam;
 		}
 
 		switch(Paths.formatToSongPath(SONG.song))
@@ -1025,7 +1049,7 @@ class PlayState extends MusicBeatState
 		add(timeBarBG);
 
 		editable = true;
-		editbleSprite = timeBarBG;
+		//editbleSprite = healthCounter;
 
 		timeBar = new FlxBar(timeBarBG.x + 4, timeBarBG.y + 4, LEFT_TO_RIGHT, Std.int(timeBarBG.width - 4), Std.int(timeBarBG.height - 8), this,
 			'songPercent', 0, 1);
@@ -1175,6 +1199,23 @@ class PlayState extends MusicBeatState
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 		//add(iconP2);
 		reloadHealthBarColors();
+
+		if(ClientPrefs.downScroll)
+		{
+			healthCounter = new FlxText(466, 19, 0, '0', 1, false);
+			healthCounter.setFormat(Paths.font("vcr.ttf"), 60, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			healthCounter.scale.set(0.3, 0.3);
+			add(healthCounter);
+			healthCounter.cameras = [camHUD];
+		}
+		else
+		{
+			healthCounter = new FlxText(474, 583, 0, '0', 1, false);
+			healthCounter.setFormat(Paths.font("vcr.ttf"), 60, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			healthCounter.scale.set(0.3, 0.3);
+			add(healthCounter);
+			healthCounter.cameras = [camHUD];
+		}
 
 		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -2738,18 +2779,20 @@ class PlayState extends MusicBeatState
 	{
 		if (FlxG.keys.pressed.SHIFT && editable)
 		{
-			timeTxt.x = FlxG.mouse.screenX;
-			timeTxt.y = FlxG.mouse.screenY;
+			healthCounter.x = FlxG.mouse.screenX;
+			healthCounter.y = FlxG.mouse.screenY;
 		}
 		else if (FlxG.keys.justPressed.C && editable)
 		{
-			trace(timeTxt);
+			trace(healthCounter);
 		}
 		/*if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
+
+		healthCounter.text = "health:" + Std.string(health * 50); //so It says as 100???
 
 		switch (curStage)
 		{
@@ -3829,7 +3872,8 @@ class PlayState extends MusicBeatState
 					if(FlxTransitionableState.skipNextTransIn) {
 						CustomFadeTransition.nextCamera = null;
 					}
-					MusicBeatState.switchState(new StoryMenuState());
+					MusicBeatState.switchState(new MainMenuState());
+					Main.fpsVar.visible = false;
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {
@@ -3891,7 +3935,8 @@ class PlayState extends MusicBeatState
 				if(FlxTransitionableState.skipNextTransIn) {
 					CustomFadeTransition.nextCamera = null;
 				}
-				MusicBeatState.switchState(new FreeplayState());
+				MusicBeatState.switchState(new MainMenuState());
+				Main.fpsVar.visible = false;
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 				changedDifficulty = false;
 			}
@@ -4892,6 +4937,9 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			case 'fire is dumb':
+				shitters.dance(true);
+
 			case 'tank':
 				if(!ClientPrefs.lowQuality) tankWatchtower.dance();
 				foregroundSprites.forEach(function(spr:BGSprite)

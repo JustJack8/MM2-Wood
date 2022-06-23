@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Dumb shit.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="chior bob instance 10000" x="24" y="24" width="2413" height="543" frameX="0" frameY="-86" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10001" x="24" y="24" width="2413" height="543" frameX="0" frameY="-86" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10002" x="24" y="575" width="2408" height="551" frameX="-2" frameY="-74" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10003" x="24" y="575" width="2408" height="551" frameX="-2" frameY="-74" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10004" x="24" y="1134" width="2405" height="598" frameX="-4" frameY="-27" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10005" x="24" y="1134" width="2405" height="598" frameX="-4" frameY="-27" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10006" x="24" y="1740" width="2409" height="625" frameX="-2" frameY="-3" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10007" x="24" y="1740" width="2409" height="625" frameX="-2" frameY="-3" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10008" x="24" y="2373" width="2411" height="622" frameX="-1" frameY="0" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10009" x="24" y="2373" width="2411" height="622" frameX="-1" frameY="0" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10010" x="24" y="2373" width="2411" height="622" frameX="-1" frameY="0" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10011" x="24" y="2373" width="2411" height="622" frameX="-1" frameY="0" frameWidth="2413" frameHeight="629"/>
+	<SubTexture name="chior bob instance 10012" x="24" y="2373" width="2411" height="622" frameX="-1" frameY="0" frameWidth="2413" frameHeight="629"/>
+</TextureAtlas>

@@ -1,103 +1,103 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				-25,
 				-16
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "idle",
-			"loop": false,
-			"name": "bf idle"
+			"fps": 24,
+			"name": "bf idle",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-2,
 				-15
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFT",
-			"loop": false,
-			"name": "bf left0"
+			"fps": 24,
+			"name": "bf left0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-20,
 				-51
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWN",
-			"loop": false,
-			"name": "bf down0"
+			"fps": 24,
+			"name": "bf down0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-35,
 				-6
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUP",
-			"loop": false,
-			"name": "bf up0"
+			"fps": 24,
+			"name": "bf up0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-42,
 				-26
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHT",
-			"loop": false,
-			"name": "bf right0"
+			"fps": 24,
+			"name": "bf right0",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-23,
 				-31
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singLEFTmiss",
-			"loop": false,
-			"name": "bf left miss"
+			"fps": 24,
+			"name": "bf left miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-24,
 				-59
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singDOWNmiss",
-			"loop": false,
-			"name": "bf down miss"
+			"fps": 24,
+			"name": "bf down miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-44,
 				-23
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singRIGHTmiss",
-			"loop": false,
-			"name": "bf right miss"
+			"fps": 24,
+			"name": "bf right miss",
+			"indices": []
 		},
 		{
+			"loop": false,
 			"offsets": [
 				-36,
 				-23
 			],
-			"indices": [],
-			"fps": 24,
 			"anim": "singUPmiss",
-			"loop": false,
-			"name": "bf up miss"
+			"fps": 24,
+			"name": "bf up miss",
+			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -118,5 +118,5 @@
 		160
 	],
 	"sing_duration": 4,
-	"scale": 1
+	"scale": 1.7
 }
