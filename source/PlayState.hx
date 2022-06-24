@@ -817,7 +817,7 @@ class PlayState extends MusicBeatState
 				stageFront.updateHitbox();
 				add(stageFront);
 
-				var hypercam:BGSprite = new BGSprite('hypercam', -473, -45);
+				var hypercam:BGSprite = new BGSprite('hypercam', -459, -45);
 				hypercam.scale.set(0.3, 0.3);
 				hypercam.cameras = [camHUD];
 				add(hypercam);
@@ -2028,7 +2028,7 @@ class PlayState extends MusicBeatState
 			for (i in 0...opponentStrums.length) {
 				setOnLuas('defaultOpponentStrumX' + i, opponentStrums.members[i].x);
 				setOnLuas('defaultOpponentStrumY' + i, opponentStrums.members[i].y);
-				//if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
+				if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
 			}
 
 			startedCountdown = true;
@@ -2164,7 +2164,7 @@ class PlayState extends MusicBeatState
 						note.copyAlpha = false;
 						note.alpha = note.multAlpha;
 						if(ClientPrefs.middleScroll && !note.mustPress) {
-							note.alpha *= 0.35;
+							note.alpha = 0;
 						}
 					}
 				});
@@ -2598,7 +2598,7 @@ class PlayState extends MusicBeatState
 			if (player < 1)
 			{
 				if(!ClientPrefs.opponentStrums) targetAlpha = 0;
-				else if(ClientPrefs.middleScroll) targetAlpha = 0.35;
+				else if(ClientPrefs.middleScroll) targetAlpha = 0;
 			}
 
 			var babyArrow:StrumNote = new StrumNote(ClientPrefs.middleScroll ? STRUM_X_MIDDLESCROLL : STRUM_X, strumLine.y, i, player);
@@ -2777,6 +2777,15 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		if(FlxG.save.data.downScroll)
+		{
+			Main.fpsVar.x = 226; 
+			Main.fpsVar.y = 55;
+		} else {
+			Main.fpsVar.x = 226;
+			Main.fpsVar.y = 607;
+		}
+
 		if (FlxG.keys.pressed.SHIFT && editable)
 		{
 			healthCounter.x = FlxG.mouse.screenX;

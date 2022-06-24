@@ -89,15 +89,7 @@ class MainMenuState extends MusicBeatState
 		mouse.x = FlxG.mouse.screenX;
         mouse.y = FlxG.mouse.screenY;
 
-		/*if (FlxG.keys.pressed.SHIFT)
-		{
-			options.x = FlxG.mouse.screenX;
-			options.y = FlxG.mouse.screenY;
-		}
-		else if (FlxG.keys.justPressed.C)
-		{
-			trace(options);
-		}*/
+		Main.fpsVar.visible = false;
 
         if (lastMousePoint != FlxG.mouse.screenX) //bro I completly miss understood what this is used for, im dumb as fuck -- just jack
         {
@@ -130,7 +122,7 @@ class MainMenuState extends MusicBeatState
                     FlxG.sound.play(Paths.sound('confirmMenu'));
 					FlxTween.tween(mouse, {alpha: 0}, 0.5);
                     PlayState.isStoryMode = true;
-                    PlayState.storyPlaylist = ['Mm2funk'];
+                    PlayState.storyPlaylist = ['Mm2nice'];
                     trace(PlayState.storyPlaylist);
                     PlayState.SONG = Song.loadFromJson(StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase() + '-hard', StringTools.replace(PlayState.storyPlaylist[0]," ", "-").toLowerCase());
                     PlayState.storyWeek = 0;

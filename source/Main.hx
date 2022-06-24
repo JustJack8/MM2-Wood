@@ -76,18 +76,22 @@ class Main extends Sprite
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
 		#if !mobile
-		if(!ClientPrefs.downScroll)
+		fpsVar = new FPS(0, 0, 0xFFFFFF);
+		if(FlxG.save.data.downScroll)
 		{
-			fpsVar = new FPS(226, 607, 0xFFFFFF);
+			fpsVar.x += 226; 
+			fpsVar.y += 55;
 		} else {
-			fpsVar = new FPS(226, 55, 0xFFFFFF);
+			fpsVar.x += 226;
+			fpsVar.y += 607;
 		}
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
-		//if(fpsVar != null) {
+		if(fpsVar != null) {
 			fpsVar.visible = false;
-		//}
+		}
+		fpsVar.visible = false;
 		#end
 
 		#if html5

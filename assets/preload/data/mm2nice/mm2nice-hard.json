@@ -1,7 +1,18 @@
 {
 	"song": {
 		"player1": "bf-mm2",
-		"events": [],
+		"events": [
+			[
+				105750,
+				[
+					[
+						"Play Animation",
+						"hey",
+						"Dad"
+					]
+				]
+			]
+		],
 		"gfVersion": "gf-mm2",
 		"notes": [
 			{
@@ -4345,11 +4356,6 @@
 					],
 					[
 						105857.142857143,
-						1,
-						321.428571428571
-					],
-					[
-						105857.142857143,
 						6,
 						321.428571428571
 					]
@@ -4364,16 +4370,6 @@
 				"lengthInSteps": 16,
 				"typeOfSection": 0,
 				"sectionNotes": [
-					[
-						106285.714285714,
-						3,
-						0
-					],
-					[
-						106392.857142857,
-						1,
-						0
-					],
 					[
 						106500,
 						3,
@@ -4427,6 +4423,17 @@
 					[
 						107464.285714286,
 						2,
+						0
+					],
+					[
+						106285.714285714,
+						3,
+						0,
+						"No Animation"
+					],
+					[
+						106392.857142857,
+						1,
 						0
 					]
 				],
@@ -6025,6 +6032,36 @@
 				"bpm": 140
 			},
 			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 140,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"sectionBeats": 4,
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 140,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionBeats": 4,
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 140
+			},
+			{
 				"gfSection": false,
 				"altAnim": false,
 				"typeOfSection": 0,
@@ -6047,7 +6084,7 @@
 		],
 		"player2": "mm2wood",
 		"player3": null,
-		"song": "Mm2funk",
+		"song": "Mm2nice",
 		"stage": "fire is dumb",
 		"needsVoices": true,
 		"arrowSkin": "",

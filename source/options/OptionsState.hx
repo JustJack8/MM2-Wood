@@ -105,7 +105,7 @@ class OptionsState extends MusicBeatState
 		}
 
 		if (controls.BACK) {
-			Main.fpsVar.visible = false;
+			//Main.resetfps();
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
 		}
